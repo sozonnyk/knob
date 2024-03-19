@@ -3,4 +3,7 @@ if SHIELD_KNOB
 config ZMK_KEYBOARD_NAME
     default "Knob"
 
+config BT_CTLR
+    default BT
+
 endif
