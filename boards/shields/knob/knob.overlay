@@ -1,0 +1,29 @@
+/ {
+    model = "Knob";
+
+    chosen {
+        zmk,kscan = &kscan;
+    };
+
+    kscan: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+
+        input-gpios
+            = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 24  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1 15  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 02 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 31  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            ;
+    };
+
+    mid_encoder: encoder_mid {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "disabled";
+    };
+
+};
+

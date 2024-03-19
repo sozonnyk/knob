@@ -1,0 +1,6 @@
+if SHIELD_KNOB
+
+config ZMK_KEYBOARD_NAME
+    default "Knob"
+
+endif
